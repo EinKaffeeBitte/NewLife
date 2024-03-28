@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 import random
 import time
+import os
 
 # Functions
 def validate(input):
@@ -71,6 +72,29 @@ def generate(gender, agemin, agemax):
         clearbt = tk.Button(root, text="Clear", command=clear)
         clearbt.place(x=500, y=100)
 
+def about():
+    aboutd = tk.Tk()
+    aboutd.title("About")
+    aboutd.geometry("500x200")
+    aboutlab = tk.Label(aboutd, text="About", fg="blue", font=("Arial", 24, "bold"))
+    aboutlab.pack(side=tk.TOP)
+    aboutdes = tk.Label(aboutd, text="Created by EinKaffeBitte on GitHub, available on \nhttps://github.com/EinKaffeeBitte/NewLife. Made with Python 3.11.0 and Tkinter \n, packed with PyInstaller and \nAUto-Py-To-Exe.", fg="blue")
+    aboutdes.place(x=30, y=60)
+
+    aboutd.mainloop()
+
+def credits():
+    creditsd = tk.Tk()
+    creditsd.title("Credits")
+    creditsd.geometry("500x200")
+    creditslab = tk.Label(creditsd, text="Credits", fg="blue", font=("Arial", 24, "bold"))
+    creditslab.pack(side=tk.TOP)
+    creditsdes = tk.Label(creditsd, text="Icon license: 'Germinating radish' by \nDennis Brown is licensed \nunder CC BY-SA 3.0. To view a copy of this license, visit \nhttps://creativecommons.org/licenses/by-sa/3.0/?ref=openverse.", fg="blue")
+    creditsdes.place(x=30, y=60)
+    btn = tk.Button(creditsd, text="Go to icon page", command=lambda: os.startfile("https://creativecommons.org/licenses/by-sa/3.0/?ref=openverse"))
+    btn.place(x=30, y=150)
+
+    creditsd.mainloop()
 
 
 # Tk Window
@@ -78,6 +102,44 @@ root = tk.Tk()
 root.title("New Life Generator")
 root.geometry("600x300")
 root.resizable(False, False)
+
+menu_bar = tk.Menu(root)
+root.config(menu=menu_bar)
+
+file_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="File", menu=file_menu)
+file_menu.add_command(label="Exit", command=root.quit)
+
+about_menu = tk.Menu(menu_bar, tearoff=0)
+menu_bar.add_cascade(label="About", menu=about_menu)
+about_menu.add_command(label="About", command=about)
+about_menu.add_command(label="Github", command=lambda: os.startfile("https://github.com/EinKaffeeBitte/NewLife"))
+about_menu.add_command(label="Credits", command=credits)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Tk Elements
 gender_label = tk.Label(root, text="Gender:")
