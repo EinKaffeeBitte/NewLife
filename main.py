@@ -3,6 +3,7 @@ import tkinter.ttk as ttk
 import random
 import time
 import os
+from PIL import Image, ImageTk
 
 # Functions
 def validate(input):
@@ -86,7 +87,7 @@ def about():
 def credits():
     creditsd = tk.Tk()
     creditsd.title("Credits")
-    creditsd.geometry("500x200")
+    creditsd.geometry("600x200")
     creditslab = tk.Label(creditsd, text="Credits", fg="blue", font=("Arial", 24, "bold"))
     creditslab.pack(side=tk.TOP)
     creditsdes = tk.Label(creditsd, text="Icon license: 'Germinating radish' by \nDennis Brown is licensed \nunder CC BY-SA 3.0. To view a copy of this license, visit \nhttps://creativecommons.org/licenses/by-sa/3.0/?ref=openverse.", fg="blue")
@@ -116,30 +117,10 @@ about_menu.add_command(label="About", command=about)
 about_menu.add_command(label="Github", command=lambda: os.startfile("https://github.com/EinKaffeeBitte/NewLife"))
 about_menu.add_command(label="Credits", command=credits)
 
+icon = Image.open("./_internal/icon.png")
+icon = ImageTk.PhotoImage(icon)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+root.iconphoto(False, icon)
 
 # Tk Elements
 gender_label = tk.Label(root, text="Gender:")
