@@ -1,5 +1,8 @@
+# WARNING
+THIS IS NOT INTENDED FOR ANY ILLEGAL PURPOSES, IT IS JUST A DEMONSTRATION AND THE AUTHOR IS NOT RESPONSIBLE FOR ANY DAMAGES.
+
 # What is this
-Ever had this situation where you want to try an online service but need to create an account and you don't want to provide your real identity? Solved!
+Ever had this situation where you want to see if a service is what you are looking for but don't want to use your real identity?
 
 # Announcements
 
